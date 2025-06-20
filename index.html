@@ -1180,12 +1180,14 @@
         }
 
         .footer-content {
-            display: block;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2.5rem;
             margin-bottom: 3rem;
         }
 
         .footer-section {
-            margin-bottom: 2.5rem;
+            margin-bottom: 0;
         }
 
         .footer-section h3 {
@@ -1210,7 +1212,7 @@
 
         .footer-contact {
             background: rgba(52, 152, 219, 0.15);
-            padding: 2rem;
+            padding: 1.5rem;
             border-radius: 15px;
             border: 1px solid rgba(52, 152, 219, 0.3);
         }
@@ -1227,6 +1229,7 @@
             color: #3498db;
             width: 20px;
             margin-top: 0.2rem;
+            flex-shrink: 0;
         }
 
         .footer-bottom {
@@ -1588,11 +1591,13 @@
             }
 
             .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
                 margin-bottom: 2rem;
             }
 
             .footer-section {
-                margin-bottom: 2rem;
+                margin-bottom: 1.5rem;
             }
 
             .footer-section h3 {
@@ -1606,11 +1611,17 @@
             }
 
             .footer-contact {
-                padding: 1.5rem;
+                padding: 1.2rem;
             }
 
             .contact-item {
                 margin-bottom: 1rem;
+                gap: 0.8rem;
+            }
+
+            .contact-icon {
+                font-size: 1.1rem;
+                width: 18px;
             }
 
             .footer-bottom p {
@@ -1706,6 +1717,51 @@
 
             .container {
                 padding: 0 12px;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .footer-section {
+                margin-bottom: 1.2rem;
+            }
+
+            .footer-section h3 {
+                font-size: 1rem;
+                margin-bottom: 0.8rem;
+            }
+
+            .footer-section p,
+            .footer-section a {
+                font-size: 0.85rem;
+                line-height: 1.6;
+            }
+
+            .footer-contact {
+                padding: 1rem;
+            }
+
+            .contact-item {
+                margin-bottom: 0.8rem;
+                gap: 0.6rem;
+            }
+
+            .contact-icon {
+                font-size: 1rem;
+                width: 16px;
+            }
+
+            .footer-bottom p {
+                font-size: 0.8rem;
+                line-height: 1.5;
+            }
+
+            .social-links a {
+                width: 32px;
+                height: 32px;
+                font-size: 0.9rem;
             }
         }
 
