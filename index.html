@@ -198,12 +198,13 @@
             background: linear-gradient(135deg, #e74c3c, #c0392b);
             color: white;
             text-align: center;
-            padding: 12px 0;
+            padding: 8px 10px;
             font-weight: 600;
-            font-size: 1rem;
+            font-size: 0.85rem;
             position: relative;
             z-index: 1001;
             box-shadow: 0 2px 10px rgba(231, 76, 60, 0.3);
+            line-height: 1.3;
         }
 
         .emergency-bar a {
@@ -222,14 +223,18 @@
         header {
             background: linear-gradient(135deg, #1a252f 0%, #2c3e50 50%, #34495e 100%);
             color: white;
-            padding: 1.2rem 0;
+            padding: 0.8rem 0;
             position: fixed;
             width: 100%;
-            top: 44px;
+            top: 0;
             z-index: 1000;
             box-shadow: 0 8px 32px rgba(0,0,0,0.3);
             transition: all 0.3s ease;
             backdrop-filter: blur(10px);
+        }
+
+        .header-with-emergency {
+            top: 32px;
         }
 
         .header-scrolled {
@@ -237,7 +242,7 @@
             background: rgba(26, 37, 47, 0.95);
             backdrop-filter: blur(15px);
             box-shadow: 0 4px 20px rgba(0,0,0,0.4);
-            padding: 1rem 0;
+            padding: 0.6rem 0;
         }
 
         nav {
@@ -247,7 +252,7 @@
         }
 
         .logo {
-            font-size: clamp(1.5rem, 4vw, 2.2rem);
+            font-size: 1.4rem;
             font-weight: 800;
             background: linear-gradient(135deg, #3498db, #2ecc71);
             -webkit-background-clip: text;
@@ -260,7 +265,7 @@
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 2.5rem;
+            gap: 1.5rem;
         }
 
         .nav-links a {
@@ -268,10 +273,10 @@
             text-decoration: none;
             transition: all 0.3s ease;
             position: relative;
-            padding: 0.8rem 0;
+            padding: 0.6rem 0;
             font-weight: 500;
             letter-spacing: 0.3px;
-            font-size: clamp(0.9rem, 2vw, 1rem);
+            font-size: 0.9rem;
         }
 
         .nav-links a:hover {
@@ -300,24 +305,31 @@
             background: none;
             border: none;
             color: white;
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             cursor: pointer;
             padding: 0.5rem;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .mobile-menu-toggle:hover {
+            background-color: rgba(255, 255, 255, 0.1);
         }
 
         /* Hero Section */
         .hero {
             background: linear-gradient(135deg, rgba(0,0,0,0.6) 0%, rgba(52,152,219,0.3) 50%, rgba(0,0,0,0.6) 100%), 
                         url('https://images.pexels.com/photos/2724748/pexels-photo-2724748.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop') center/cover;
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
             color: white;
-            margin-top: 120px;
+            margin-top: 90px;
             position: relative;
             overflow: hidden;
+            padding: 2rem 0;
         }
 
         .hero::before {
@@ -337,10 +349,11 @@
             animation: heroFadeIn 1.2s ease-out;
             background: rgba(255, 255, 255, 0.97);
             backdrop-filter: blur(15px);
-            padding: 4.5rem 3.5rem;
-            border-radius: 25px;
+            padding: 2.5rem 2rem;
+            border-radius: 20px;
             border: 1px solid rgba(255, 255, 255, 0.3);
             box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+            margin: 1rem;
         }
 
         .hero-content * {
@@ -351,11 +364,11 @@
         .hero-badge {
             background: linear-gradient(135deg, #3498db, #2ecc71);
             color: white !important;
-            padding: 10px 24px;
-            border-radius: 30px;
-            font-size: clamp(0.8rem, 2vw, 0.95rem);
+            padding: 8px 16px;
+            border-radius: 25px;
+            font-size: 0.8rem;
             font-weight: 700;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
             display: inline-block;
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -363,8 +376,8 @@
         }
 
         .hero-content h1 {
-            font-size: clamp(2.5rem, 8vw, 4.2rem);
-            margin-bottom: 1.5rem;
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
             font-weight: 800;
             line-height: 1.1;
             letter-spacing: -1px;
@@ -375,25 +388,25 @@
         }
 
         .hero-subtitle {
-            font-size: clamp(1.2rem, 4vw, 1.6rem);
-            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
             font-weight: 400;
             color: #3498db !important;
         }
 
         .hero-description {
-            font-size: clamp(1rem, 3vw, 1.2rem);
-            margin-bottom: 3rem;
+            font-size: 1rem;
+            margin-bottom: 2rem;
             max-width: 700px;
             margin-left: auto;
             margin-right: auto;
-            line-height: 1.7;
+            line-height: 1.6;
             color: #555 !important;
         }
 
         .cta-buttons {
             display: flex;
-            gap: 1.5rem;
+            gap: 1rem;
             justify-content: center;
             flex-wrap: wrap;
         }
@@ -401,10 +414,10 @@
         .cta-button {
             background: linear-gradient(135deg, #e74c3c, #c0392b);
             color: white;
-            padding: clamp(15px, 3vw, 20px) clamp(30px, 6vw, 40px);
+            padding: 12px 24px;
             border: none;
-            border-radius: 50px;
-            font-size: clamp(1rem, 3vw, 1.2rem);
+            border-radius: 25px;
+            font-size: 0.95rem;
             font-weight: 700;
             cursor: pointer;
             transition: all 0.3s ease;
@@ -413,10 +426,12 @@
             box-shadow: 0 10px 30px rgba(231, 76, 60, 0.4);
             text-transform: uppercase;
             letter-spacing: 0.5px;
+            min-width: 180px;
+            text-align: center;
         }
 
         .cta-button:hover {
-            transform: translateY(-4px);
+            transform: translateY(-3px);
             box-shadow: 0 15px 40px rgba(231, 76, 60, 0.6);
             background: linear-gradient(135deg, #c0392b, #a93226);
         }
@@ -436,7 +451,7 @@
             background: linear-gradient(135deg, #f39c12, #e67e22);
             color: white;
             text-align: center;
-            padding: 2rem 0;
+            padding: 1.5rem 0;
             position: relative;
             overflow: hidden;
         }
@@ -458,13 +473,13 @@
         }
 
         .kitchen-focus h2 {
-            font-size: clamp(1.8rem, 5vw, 2.5rem);
+            font-size: 1.6rem;
             font-weight: 800;
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem;
         }
 
         .kitchen-focus p {
-            font-size: clamp(1rem, 3vw, 1.3rem);
+            font-size: 1rem;
             max-width: 800px;
             margin: 0 auto;
         }
@@ -473,73 +488,70 @@
         .trust-indicators {
             background: rgba(255,255,255,0.98);
             backdrop-filter: blur(10px);
-            padding: 2.5rem 0;
+            padding: 2rem 0;
             border-bottom: 1px solid rgba(255,255,255,0.2);
             box-shadow: 0 5px 20px rgba(0,0,0,0.1);
         }
 
         .trust-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 2.5rem;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
             text-align: center;
         }
 
         .trust-item {
             color: #2c3e50;
-            padding: 1.5rem;
+            padding: 1rem;
             background: white;
-            border-radius: 15px;
+            border-radius: 12px;
             box-shadow: 0 8px 25px rgba(0,0,0,0.08);
             transition: transform 0.3s ease;
         }
 
         .trust-item:hover {
-            transform: translateY(-5px);
+            transform: translateY(-3px);
         }
 
         .trust-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
             color: #3498db;
         }
 
         .trust-text {
             font-weight: 700;
-            font-size: clamp(0.8rem, 2vw, 1rem);
+            font-size: 0.8rem;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
 
         /* About Section */
         .about {
-            padding: 140px 0;
+            padding: 80px 0;
             background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 50%, #f1f2f6 100%);
         }
 
         .section-badge {
             background: linear-gradient(135deg, #3498db, #2ecc71);
             color: white;
-            padding: 8px 20px;
-            border-radius: 25px;
-            font-size: 0.85rem;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.8rem;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1px;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
             display: inline-block;
         }
 
         .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 6rem;
-            align-items: center;
+            display: block;
         }
 
         .about-text h2 {
-            font-size: clamp(2.5rem, 7vw, 3.5rem);
-            margin-bottom: 1.5rem;
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
             color: #2c3e50;
             font-weight: 800;
             line-height: 1.2;
@@ -547,49 +559,49 @@
         }
 
         .about-text h3 {
-            font-size: clamp(1.2rem, 4vw, 1.6rem);
+            font-size: 1.2rem;
             color: #3498db;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
             font-weight: 400;
             line-height: 1.4;
         }
 
         .about-text p {
-            font-size: clamp(1rem, 3vw, 1.15rem);
-            margin-bottom: 2rem;
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
             color: #555;
-            line-height: 1.8;
+            line-height: 1.7;
         }
 
         .about-stats {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            margin-top: 3rem;
+            gap: 1rem;
+            margin-top: 2rem;
         }
 
         .stat-item {
             text-align: center;
-            padding: 2rem 1.5rem;
+            padding: 1.5rem 1rem;
             background: white;
-            border-radius: 20px;
+            border-radius: 15px;
             box-shadow: 0 12px 35px rgba(0,0,0,0.1);
             transition: transform 0.3s ease;
         }
 
         .stat-item:hover {
-            transform: translateY(-8px);
+            transform: translateY(-5px);
         }
 
         .stat-number {
-            font-size: clamp(2rem, 6vw, 2.8rem);
+            font-size: 2rem;
             font-weight: 800;
             color: #3498db;
             display: block;
         }
 
         .stat-label {
-            font-size: clamp(0.8rem, 2vw, 0.95rem);
+            font-size: 0.8rem;
             color: #666;
             text-transform: uppercase;
             letter-spacing: 0.5px;
@@ -598,35 +610,36 @@
 
         .about-image {
             position: relative;
+            margin-top: 2rem;
         }
 
         .about-image img {
             width: 100%;
-            border-radius: 25px;
+            border-radius: 20px;
             box-shadow: 0 30px 60px rgba(0,0,0,0.2);
             transition: transform 0.3s ease;
         }
 
         .about-image img:hover {
-            transform: translateY(-12px);
+            transform: translateY(-8px);
         }
 
         .about-image::before {
             content: '';
             position: absolute;
-            top: 25px;
-            left: 25px;
-            right: -25px;
-            bottom: -25px;
+            top: 15px;
+            left: 15px;
+            right: -15px;
+            bottom: -15px;
             background: linear-gradient(135deg, #3498db, #2ecc71);
-            border-radius: 25px;
+            border-radius: 20px;
             z-index: -1;
             opacity: 0.15;
         }
 
         /* Kitchen Services Section */
         .kitchen-services {
-            padding: 140px 0;
+            padding: 80px 0;
             background: linear-gradient(135deg, #f8fafe 0%, #ffffff 50%, #f1f8ff 100%);
             position: relative;
             overflow: hidden;
@@ -645,14 +658,14 @@
 
         .services-header {
             text-align: center;
-            margin-bottom: 6rem;
+            margin-bottom: 3rem;
             position: relative;
             z-index: 2;
         }
 
         .kitchen-services h2 {
-            font-size: clamp(2.5rem, 7vw, 3.5rem);
-            margin-bottom: 1.5rem;
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
             color: #2c3e50;
             font-weight: 800;
             letter-spacing: -1px;
@@ -663,7 +676,7 @@
         }
 
         .services-subtitle {
-            font-size: clamp(1.1rem, 3vw, 1.35rem);
+            font-size: 1.1rem;
             color: #5a6c7d;
             max-width: 750px;
             margin: 0 auto;
@@ -671,10 +684,7 @@
         }
 
         .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-            gap: 4rem;
-            align-items: start;
+            display: block;
             position: relative;
             z-index: 2;
         }
@@ -682,7 +692,7 @@
         .service-card {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(20px);
-            border-radius: 35px;
+            border-radius: 25px;
             overflow: hidden;
             box-shadow: 0 30px 80px rgba(52, 152, 219, 0.12);
             transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -690,10 +700,11 @@
             border: 2px solid rgba(255, 255, 255, 0.8);
             display: flex;
             flex-direction: column;
+            margin-bottom: 2rem;
         }
 
         .service-card:hover {
-            transform: translateY(-25px);
+            transform: translateY(-15px);
             box-shadow: 0 50px 100px rgba(52, 152, 219, 0.25);
             border-color: rgba(52, 152, 219, 0.3);
         }
@@ -704,15 +715,15 @@
             top: 0;
             left: 0;
             right: 0;
-            height: 8px;
+            height: 6px;
             background: linear-gradient(135deg, #3498db, #2ecc71, #e74c3c);
-            border-radius: 35px 35px 0 0;
+            border-radius: 25px 25px 0 0;
             z-index: 1;
         }
 
         .service-image {
             position: relative;
-            height: 300px;
+            height: 250px;
             overflow: hidden;
             border-radius: 0;
             z-index: 2;
@@ -727,7 +738,7 @@
         }
 
         .service-card:hover img {
-            transform: scale(1.15);
+            transform: scale(1.1);
             filter: brightness(1.2) contrast(1.1) saturate(1.1);
         }
 
@@ -752,10 +763,10 @@
 
         .service-overlay-text {
             color: white;
-            font-size: 1.3rem;
+            font-size: 1.1rem;
             font-weight: 800;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 1px;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
             transform: translateY(20px);
             transition: transform 0.4s ease;
@@ -766,7 +777,7 @@
         }
 
         .service-card-content {
-            padding: 3rem 2.5rem;
+            padding: 2rem 1.5rem;
             display: flex;
             flex-direction: column;
             flex-grow: 1;
@@ -776,8 +787,8 @@
         }
 
         .service-card h3 {
-            font-size: clamp(1.3rem, 4vw, 1.7rem);
-            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
             color: #2c3e50;
             font-weight: 800;
             line-height: 1.3;
@@ -789,45 +800,45 @@
 
         .service-card p {
             color: #5a6c7d;
-            line-height: 1.7;
-            font-size: clamp(0.95rem, 2.5vw, 1.05rem);
-            margin-bottom: 2rem;
+            line-height: 1.6;
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
         }
 
         .service-features {
             list-style: none;
-            margin-bottom: 2.5rem;
+            margin-bottom: 2rem;
             flex-grow: 1;
             background: linear-gradient(135deg, rgba(52, 152, 219, 0.03), rgba(46, 204, 113, 0.03));
-            padding: 1.5rem;
-            border-radius: 20px;
+            padding: 1rem;
+            border-radius: 15px;
             border: 1px solid rgba(52, 152, 219, 0.1);
         }
 
         .service-features li {
-            padding: 0.8rem 0;
+            padding: 0.6rem 0;
             color: #34495e;
             position: relative;
-            padding-left: 2.5rem;
-            font-size: clamp(0.9rem, 2vw, 1rem);
+            padding-left: 2rem;
+            font-size: 0.9rem;
             transition: all 0.3s ease;
-            border-radius: 12px;
-            margin-bottom: 0.5rem;
+            border-radius: 8px;
+            margin-bottom: 0.3rem;
         }
 
         .service-features li:hover {
             background: rgba(52, 152, 219, 0.08);
-            padding-left: 3rem;
+            padding-left: 2.5rem;
         }
 
         .service-features li::before {
             content: '';
             position: absolute;
-            left: 0.5rem;
+            left: 0.3rem;
             top: 50%;
             transform: translateY(-50%);
-            width: 16px;
-            height: 16px;
+            width: 12px;
+            height: 12px;
             background: linear-gradient(135deg, #2ecc71, #27ae60);
             border-radius: 50%;
             box-shadow: 0 4px 12px rgba(46, 204, 113, 0.3);
@@ -836,14 +847,14 @@
         .service-features li::after {
             content: '✓';
             position: absolute;
-            left: 0.5rem;
+            left: 0.3rem;
             top: 50%;
             transform: translateY(-50%);
             color: white;
             font-weight: 900;
-            font-size: 0.8rem;
-            width: 16px;
-            height: 16px;
+            font-size: 0.7rem;
+            width: 12px;
+            height: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -852,15 +863,15 @@
         .service-cta {
             background: linear-gradient(135deg, #3498db, #2980b9, #1f4e79);
             color: white;
-            padding: clamp(15px, 3vw, 18px) clamp(30px, 6vw, 36px);
+            padding: 12px 24px;
             border: none;
-            border-radius: 50px;
+            border-radius: 25px;
             font-weight: 800;
             cursor: pointer;
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             text-decoration: none;
             display: block;
-            font-size: clamp(0.95rem, 2.5vw, 1.05rem);
+            font-size: 0.95rem;
             text-transform: uppercase;
             letter-spacing: 1px;
             text-align: center;
@@ -870,32 +881,32 @@
         }
 
         .service-cta:hover {
-            transform: translateY(-5px) scale(1.02);
+            transform: translateY(-3px) scale(1.02);
             box-shadow: 0 20px 50px rgba(52, 152, 219, 0.6);
             background: linear-gradient(135deg, #2980b9, #1f4e79, #154360);
         }
 
         /* Kitchen Process Section */
         .kitchen-process {
-            padding: 140px 0;
+            padding: 80px 0;
             background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 50%, #f1f2f6 100%);
         }
 
         .process-header {
             text-align: center;
-            margin-bottom: 6rem;
+            margin-bottom: 3rem;
         }
 
         .kitchen-process h2 {
-            font-size: clamp(2.5rem, 7vw, 3.5rem);
-            margin-bottom: 1.5rem;
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
             color: #2c3e50;
             font-weight: 800;
             letter-spacing: -1px;
         }
 
         .process-subtitle {
-            font-size: clamp(1.1rem, 3vw, 1.35rem);
+            font-size: 1.1rem;
             color: #666;
             max-width: 850px;
             margin: 0 auto;
@@ -903,21 +914,20 @@
         }
 
         .process-steps {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 3rem;
-            margin-top: 4rem;
+            display: block;
+            margin-top: 2rem;
         }
 
         .process-step {
             text-align: center;
-            padding: 3rem 2rem;
+            padding: 2rem 1.5rem;
             background: white;
-            border-radius: 25px;
+            border-radius: 20px;
             box-shadow: 0 20px 40px rgba(0,0,0,0.1);
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
+            margin-bottom: 1.5rem;
         }
 
         .process-step::before {
@@ -926,46 +936,46 @@
             top: 0;
             left: 0;
             right: 0;
-            height: 5px;
+            height: 4px;
             background: linear-gradient(135deg, #3498db, #2ecc71);
         }
 
         .process-step:hover {
-            transform: translateY(-12px);
+            transform: translateY(-8px);
             box-shadow: 0 30px 60px rgba(0,0,0,0.15);
         }
 
         .step-number {
-            width: 60px;
-            height: 60px;
+            width: 50px;
+            height: 50px;
             background: linear-gradient(135deg, #3498db, #2ecc71);
             color: white;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             font-weight: 800;
-            margin: 0 auto 1.5rem;
+            margin: 0 auto 1rem;
             box-shadow: 0 10px 30px rgba(52, 152, 219, 0.3);
         }
 
         .process-step h3 {
-            font-size: clamp(1.2rem, 3vw, 1.5rem);
-            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            margin-bottom: 0.8rem;
             color: #2c3e50;
             font-weight: 700;
         }
 
         .process-step p {
             color: #666;
-            line-height: 1.7;
-            font-size: clamp(0.95rem, 2.5vw, 1.05rem);
+            line-height: 1.6;
+            font-size: 0.95rem;
         }
 
         /* TESTIMONIALS SECTION */
         .testimonials {
-            padding: 140px 0;
+            padding: 80px 0;
             background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 50%, #ffffff 100%);
             position: relative;
             overflow: hidden;
@@ -984,14 +994,14 @@
 
         .testimonials-header {
             text-align: center;
-            margin-bottom: 6rem;
+            margin-bottom: 3rem;
             position: relative;
             z-index: 2;
         }
 
         .testimonials h2 {
-            font-size: clamp(2.5rem, 7vw, 3.5rem);
-            margin-bottom: 1.5rem;
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
             color: #2c3e50;
             font-weight: 800;
             letter-spacing: -1px;
@@ -1002,7 +1012,7 @@
         }
 
         .testimonials-subtitle {
-            font-size: clamp(1.1rem, 3vw, 1.35rem);
+            font-size: 1.1rem;
             color: #5a6c7d;
             max-width: 750px;
             margin: 0 auto;
@@ -1010,24 +1020,23 @@
         }
 
         .testimonials-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 3.5rem;
+            display: block;
             position: relative;
             z-index: 2;
-            margin-top: 4rem;
+            margin-top: 2rem;
         }
 
         .testimonial-card {
             background: rgba(255, 255, 255, 0.98);
             backdrop-filter: blur(20px);
-            border-radius: 30px;
-            padding: 3.5rem 3rem;
+            border-radius: 25px;
+            padding: 2rem 1.5rem;
             box-shadow: 0 25px 60px rgba(0, 0, 0, 0.08);
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             position: relative;
             border: 2px solid rgba(255, 255, 255, 0.8);
             overflow: hidden;
+            margin-bottom: 2rem;
         }
 
         .testimonial-card::before {
@@ -1036,18 +1045,18 @@
             top: 0;
             left: 0;
             right: 0;
-            height: 6px;
+            height: 4px;
             background: linear-gradient(135deg, #3498db, #2ecc71, #f39c12);
-            border-radius: 30px 30px 0 0;
+            border-radius: 25px 25px 0 0;
         }
 
         .testimonial-card::after {
             content: '"';
-            font-size: 8rem;
+            font-size: 6rem;
             color: rgba(52, 152, 219, 0.08);
             position: absolute;
-            top: 1rem;
-            right: 2rem;
+            top: 0.5rem;
+            right: 1rem;
             font-family: Georgia, serif;
             font-weight: bold;
             line-height: 1;
@@ -1055,7 +1064,7 @@
         }
 
         .testimonial-card:hover {
-            transform: translateY(-15px);
+            transform: translateY(-10px);
             box-shadow: 0 40px 80px rgba(52, 152, 219, 0.15);
             border-color: rgba(52, 152, 219, 0.2);
         }
@@ -1066,10 +1075,10 @@
         }
 
         .testimonial-quote p {
-            font-size: 1.2rem;
-            line-height: 1.8;
+            font-size: 1.1rem;
+            line-height: 1.7;
             color: #34495e;
-            margin-bottom: 2.5rem;
+            margin-bottom: 2rem;
             font-style: italic;
             position: relative;
             z-index: 2;
@@ -1086,13 +1095,13 @@
         .testimonial-author h4 {
             font-weight: 700;
             color: #2c3e50;
-            font-size: 1.2rem;
-            margin-bottom: 0.3rem;
+            font-size: 1.1rem;
+            margin-bottom: 0.2rem;
         }
 
         .testimonial-author p {
             color: #3498db;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             margin: 0;
             font-style: normal;
             font-weight: 600;
@@ -1100,15 +1109,15 @@
 
         .testimonial-rating {
             color: #f39c12;
-            font-size: 1.4rem;
-            letter-spacing: 2px;
+            font-size: 1.2rem;
+            letter-spacing: 1px;
         }
 
         /* CTA Section */
         .cta-section {
             background: linear-gradient(135deg, #2c3e50 0%, #3498db 50%, #2ecc71 100%);
             color: white;
-            padding: 140px 0;
+            padding: 80px 0;
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -1133,32 +1142,32 @@
         }
 
         .cta-section h2 {
-            font-size: 3.8rem;
-            margin-bottom: 2rem;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
             font-weight: 800;
             line-height: 1.2;
             letter-spacing: -1px;
         }
 
         .cta-section p {
-            font-size: 1.5rem;
-            margin-bottom: 3rem;
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
             line-height: 1.6;
             color: #ecf0f1;
         }
 
         .cta-highlight {
             background: rgba(255,255,255,0.25);
-            padding: 2.5rem;
-            border-radius: 20px;
-            margin: 3rem 0;
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
             backdrop-filter: blur(15px);
             border: 1px solid rgba(255,255,255,0.3);
         }
 
         .cta-highlight h3 {
-            font-size: 1.6rem;
-            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
             color: #f1c40f;
             font-weight: 700;
         }
@@ -1167,20 +1176,22 @@
         footer {
             background: linear-gradient(135deg, #1a252f, #2c3e50);
             color: white;
-            padding: 100px 0 50px;
+            padding: 60px 0 30px;
         }
 
         .footer-content {
-            display: grid;
-            grid-template-columns: 2fr 1.5fr 1.5fr 1.8fr;
-            gap: 3.5rem;
-            margin-bottom: 4rem;
+            display: block;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section {
+            margin-bottom: 2.5rem;
         }
 
         .footer-section h3 {
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
             color: #3498db;
-            font-size: clamp(1.2rem, 3vw, 1.5rem);
+            font-size: 1.2rem;
             font-weight: 700;
         }
 
@@ -1188,8 +1199,8 @@
         .footer-section a {
             color: #bdc3c7;
             text-decoration: none;
-            line-height: 1.8;
-            font-size: clamp(0.95rem, 2vw, 1.05rem);
+            line-height: 1.7;
+            font-size: 0.95rem;
         }
 
         .footer-section a:hover {
@@ -1199,46 +1210,48 @@
 
         .footer-contact {
             background: rgba(52, 152, 219, 0.15);
-            padding: 2.5rem;
-            border-radius: 20px;
+            padding: 2rem;
+            border-radius: 15px;
             border: 1px solid rgba(52, 152, 219, 0.3);
         }
 
         .contact-item {
             display: flex;
-            align-items: center;
-            gap: 1.2rem;
-            margin-bottom: 1.5rem;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.2rem;
         }
 
         .contact-icon {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             color: #3498db;
-            width: 25px;
+            width: 20px;
+            margin-top: 0.2rem;
         }
 
         .footer-bottom {
             border-top: 1px solid #34495e;
-            padding-top: 3rem;
+            padding-top: 2rem;
             text-align: center;
             color: #95a5a6;
         }
 
         .footer-bottom p {
             margin-bottom: 1rem;
-            font-size: 1rem;
+            font-size: 0.9rem;
+            line-height: 1.6;
         }
 
         .social-links {
             display: flex;
             justify-content: center;
-            gap: 1.5rem;
-            margin-top: 2rem;
+            gap: 1rem;
+            margin-top: 1.5rem;
         }
 
         .social-links a {
-            width: 45px;
-            height: 45px;
+            width: 40px;
+            height: 40px;
             background: rgba(52, 152, 219, 0.2);
             border-radius: 50%;
             display: flex;
@@ -1247,20 +1260,20 @@
             color: #3498db;
             text-decoration: none;
             transition: all 0.3s ease;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
         }
 
         .social-links a:hover {
             background: #3498db;
             color: white;
-            transform: translateY(-3px);
+            transform: translateY(-2px);
         }
 
         /* Animations */
         @keyframes heroFadeIn {
             from {
                 opacity: 0;
-                transform: translateY(50px);
+                transform: translateY(30px);
             }
             to {
                 opacity: 1;
@@ -1270,7 +1283,7 @@
 
         .fade-in-up {
             opacity: 0;
-            transform: translateY(30px);
+            transform: translateY(20px);
             transition: all 0.8s ease-out;
         }
 
@@ -1285,7 +1298,7 @@
             top: 0;
             left: 0;
             width: 0%;
-            height: 4px;
+            height: 3px;
             background: linear-gradient(135deg, #3498db, #2ecc71);
             z-index: 9999;
             transition: width 0.1s ease;
@@ -1322,8 +1335,9 @@
         /* Mobile Responsiveness */
         @media (max-width: 768px) {
             .emergency-bar {
-                font-size: 0.9rem;
-                padding: 10px 0;
+                font-size: 0.75rem;
+                padding: 6px 10px;
+                line-height: 1.2;
             }
 
             .mobile-menu-toggle {
@@ -1339,151 +1353,376 @@
                 background: rgba(26, 37, 47, 0.98);
                 backdrop-filter: blur(15px);
                 flex-direction: column;
-                padding: 2rem;
-                gap: 1.5rem;
+                padding: 1.5rem;
+                gap: 1rem;
                 border-top: 1px solid rgba(255,255,255,0.1);
+                box-shadow: 0 10px 30px rgba(0,0,0,0.3);
             }
 
             .nav-links.active {
                 display: flex;
             }
 
+            .nav-links a {
+                font-size: 1rem;
+                padding: 0.8rem 0;
+                text-align: center;
+            }
+
             .hero {
-                margin-top: 150px;
-                height: 90vh;
+                margin-top: 80px;
+                min-height: 85vh;
                 background-attachment: scroll;
+                padding: 1rem 0;
             }
 
             .hero-content {
-                padding: 3rem 2.5rem;
+                padding: 2rem 1.5rem;
+                margin: 0.5rem;
+                border-radius: 15px;
             }
 
             .hero-content h1 {
-                font-size: 3rem;
+                font-size: 1.8rem;
+                margin-bottom: 0.8rem;
             }
 
             .hero-subtitle {
-                font-size: 1.3rem;
+                font-size: 1rem;
+                margin-bottom: 0.8rem;
             }
 
             .hero-description {
-                font-size: 1.1rem;
+                font-size: 0.9rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .hero-badge {
+                font-size: 0.7rem;
+                padding: 6px 12px;
+                margin-bottom: 1rem;
             }
 
             .cta-buttons {
                 flex-direction: column;
                 align-items: center;
+                gap: 0.8rem;
             }
 
             .cta-button {
                 width: 100%;
-                max-width: 320px;
+                max-width: 280px;
+                padding: 10px 20px;
+                font-size: 0.85rem;
+                border-radius: 20px;
+            }
+
+            .kitchen-focus h2 {
+                font-size: 1.3rem;
+            }
+
+            .kitchen-focus p {
+                font-size: 0.9rem;
+            }
+
+            .trust-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .trust-item {
+                padding: 1rem 0.8rem;
+            }
+
+            .trust-icon {
+                font-size: 1.5rem;
+            }
+
+            .trust-text {
+                font-size: 0.75rem;
+            }
+
+            .about,
+            .kitchen-services,
+            .kitchen-process,
+            .testimonials,
+            .cta-section {
+                padding: 50px 0;
             }
 
             .about-content {
-                grid-template-columns: 1fr;
-                gap: 4rem;
+                text-align: center;
+            }
+
+            .about-text h2,
+            .kitchen-services h2,
+            .kitchen-process h2,
+            .testimonials h2 {
+                font-size: 1.8rem;
+            }
+
+            .about-text h3 {
+                font-size: 1.1rem;
             }
 
             .about-stats {
                 grid-template-columns: 1fr;
-                gap: 2rem;
+                gap: 1rem;
+                margin-top: 1.5rem;
             }
 
-            .services-grid {
-                grid-template-columns: 1fr;
-                gap: 2.5rem;
+            .stat-item {
+                padding: 1.2rem 0.8rem;
             }
 
-            .testimonials-container {
-                grid-template-columns: 1fr;
-                gap: 2rem;
+            .stat-number {
+                font-size: 1.6rem;
+            }
+
+            .stat-label {
+                font-size: 0.75rem;
+            }
+
+            .services-header,
+            .process-header,
+            .testimonials-header {
+                margin-bottom: 2rem;
+            }
+
+            .services-subtitle,
+            .process-subtitle,
+            .testimonials-subtitle {
+                font-size: 1rem;
+            }
+
+            .service-card-content {
+                padding: 1.5rem 1.2rem;
+            }
+
+            .service-card h3 {
+                font-size: 1.2rem;
+            }
+
+            .service-features {
+                padding: 0.8rem;
+            }
+
+            .service-features li {
+                font-size: 0.85rem;
+                padding: 0.5rem 0;
+            }
+
+            .service-cta {
+                padding: 10px 20px;
+                font-size: 0.85rem;
+            }
+
+            .process-step {
+                padding: 1.5rem 1.2rem;
+                margin-bottom: 1.2rem;
+            }
+
+            .step-number {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
+
+            .process-step h3 {
+                font-size: 1.1rem;
+            }
+
+            .process-step p {
+                font-size: 0.9rem;
             }
 
             .testimonial-card {
-                padding: 2.5rem 2rem;
+                padding: 1.5rem 1.2rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .testimonial-card::after {
+                font-size: 4rem;
+                top: 0.2rem;
+                right: 0.8rem;
+            }
+
+            .testimonial-quote p {
+                font-size: 1rem;
+                margin-bottom: 1.5rem;
             }
 
             .testimonial-footer {
                 flex-direction: column;
                 align-items: flex-start;
-                gap: 1rem;
+                gap: 0.8rem;
             }
 
-            .process-steps {
-                grid-template-columns: 1fr;
-                gap: 2.5rem;
+            .testimonial-author h4 {
+                font-size: 1rem;
             }
 
-            .trust-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 1.5rem;
+            .testimonial-author p {
+                font-size: 0.85rem;
+            }
+
+            .testimonial-rating {
+                font-size: 1.1rem;
+            }
+
+            .cta-section h2 {
+                font-size: 2rem;
+            }
+
+            .cta-section p {
+                font-size: 1.1rem;
+            }
+
+            .cta-highlight {
+                padding: 1.5rem;
+                margin: 1.5rem 0;
+            }
+
+            .cta-highlight h3 {
+                font-size: 1.1rem;
             }
 
             .footer-content {
-                grid-template-columns: 1fr 1fr;
-                gap: 2.5rem;
+                margin-bottom: 2rem;
             }
 
-            .about-text h2,
-            .kitchen-services h2,
-            .kitchen-process h2,
-            .testimonials h2,
-            .cta-section h2 {
-                font-size: 2.8rem;
+            .footer-section {
+                margin-bottom: 2rem;
+            }
+
+            .footer-section h3 {
+                font-size: 1.1rem;
+                margin-bottom: 1rem;
+            }
+
+            .footer-section p,
+            .footer-section a {
+                font-size: 0.9rem;
+            }
+
+            .footer-contact {
+                padding: 1.5rem;
+            }
+
+            .contact-item {
+                margin-bottom: 1rem;
+            }
+
+            .footer-bottom p {
+                font-size: 0.85rem;
+            }
+
+            .social-links a {
+                width: 35px;
+                height: 35px;
+                font-size: 1rem;
             }
 
             .container {
                 padding: 0 15px;
             }
-
-            .service-card-content,
-            .testimonial-card {
-                padding: 2.5rem 2rem;
-            }
-
-            .process-step {
-                padding: 3rem 2rem;
-            }
         }
 
         @media (max-width: 480px) {
-            .hero-content h1 {
-                font-size: 2.5rem;
-            }
-            
-            .about-text h2,
-            .kitchen-services h2,
-            .kitchen-process h2,
-            .testimonials h2,
-            .cta-section h2 {
-                font-size: 2.2rem;
-            }
-
-            .trust-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .process-step,
-            .testimonial-card {
-                padding: 2rem 1.5rem;
-            }
-
-            .footer-content {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
             .emergency-bar {
+                font-size: 0.7rem;
+                padding: 5px 8px;
+            }
+
+            .hero-content {
+                padding: 1.5rem 1rem;
+                margin: 0.5rem;
+            }
+
+            .hero-content h1 {
+                font-size: 1.6rem;
+            }
+
+            .hero-subtitle {
+                font-size: 0.95rem;
+            }
+
+            .hero-description {
                 font-size: 0.85rem;
             }
 
-            .services-grid {
-                grid-template-columns: 1fr;
+            .hero-badge {
+                font-size: 0.65rem;
+                padding: 5px 10px;
             }
 
-            .testimonials-container {
-                grid-template-columns: 1fr;
+            .cta-button {
+                font-size: 0.8rem;
+                padding: 8px 16px;
+            }
+
+            .about-text h2,
+            .kitchen-services h2,
+            .kitchen-process h2,
+            .testimonials h2 {
+                font-size: 1.6rem;
+            }
+
+            .service-image {
+                height: 200px;
+            }
+
+            .service-card-content {
+                padding: 1.2rem 1rem;
+            }
+
+            .service-card h3 {
+                font-size: 1.1rem;
+            }
+
+            .service-card p {
+                font-size: 0.9rem;
+            }
+
+            .service-features li {
+                font-size: 0.8rem;
+            }
+
+            .testimonial-card {
+                padding: 1.2rem 1rem;
+            }
+
+            .testimonial-quote p {
+                font-size: 0.95rem;
+            }
+
+            .cta-section h2 {
+                font-size: 1.8rem;
+            }
+
+            .cta-section p {
+                font-size: 1rem;
+            }
+
+            .container {
+                padding: 0 12px;
+            }
+        }
+
+        /* Fix for very small screens */
+        @media (max-width: 320px) {
+            .hero-content h1 {
+                font-size: 1.4rem;
+            }
+            
+            .cta-button {
+                min-width: 150px;
+                font-size: 0.75rem;
+            }
+            
+            .service-card-content,
+            .testimonial-card {
+                padding: 1rem 0.8rem;
             }
         }
     </style>
@@ -1494,11 +1733,11 @@
 
     <!-- Emergency Contact Bar -->
     <div class="emergency-bar">
-        📞 KITCHEN SPECIALIST • PROFESSIONAL QUOTES • <a href="tel:+17055617614">(705) 561-7614</a> • Licensed & Insured 📞
+        📞 KITCHEN SPECIALIST • <a href="tel:+17055617614">(705) 561-7614</a> • Licensed & Insured 📞
     </div>
 
     <!-- Header -->
-    <header id="header">
+    <header id="header" class="header-with-emergency">
         <nav class="container">
             <div class="logo">Dreamworks Installers</div>
             <ul class="nav-links" id="navLinks">
@@ -1874,15 +2113,23 @@
             navLinks.classList.toggle('active');
         });
 
+        // Close mobile menu when clicking on a link
+        navLinks.addEventListener('click', function(e) {
+            if (e.target.tagName === 'A') {
+                navLinks.classList.remove('active');
+            }
+        });
+
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
+                    const offsetTop = target.offsetTop - 80; // Account for fixed header
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
                     });
                     navLinks.classList.remove('active');
                 }
@@ -1900,10 +2147,12 @@
             
             scrollProgress.style.width = scrollPercent + '%';
 
-            if (scrollTop > 100) {
+            if (scrollTop > 50) {
                 header.classList.add('header-scrolled');
+                header.classList.remove('header-with-emergency');
             } else {
                 header.classList.remove('header-scrolled');
+                header.classList.add('header-with-emergency');
             }
         });
 
@@ -2015,6 +2264,50 @@
 
         // Initialize kitchen specialty features
         highlightKitchenSpecialty();
+
+        // Touch-friendly interactions for mobile
+        function setupTouchInteractions() {
+            // Add touch feedback for buttons
+            const buttons = document.querySelectorAll('.cta-button, .service-cta');
+            buttons.forEach(button => {
+                button.addEventListener('touchstart', function() {
+                    this.style.transform = 'scale(0.98)';
+                });
+                button.addEventListener('touchend', function() {
+                    this.style.transform = '';
+                });
+            });
+        }
+
+        // Initialize touch interactions
+        setupTouchInteractions();
+
+        // Optimize scroll performance for mobile
+        let ticking = false;
+        function updateScrollElements() {
+            const scrollTop = window.pageYOffset;
+            const docHeight = document.body.scrollHeight - window.innerHeight;
+            const scrollPercent = (scrollTop / docHeight) * 100;
+            
+            scrollProgress.style.width = scrollPercent + '%';
+
+            if (scrollTop > 50) {
+                header.classList.add('header-scrolled');
+                header.classList.remove('header-with-emergency');
+            } else {
+                header.classList.remove('header-scrolled');
+                header.classList.add('header-with-emergency');
+            }
+            
+            ticking = false;
+        }
+
+        window.addEventListener('scroll', function() {
+            if (!ticking) {
+                requestAnimationFrame(updateScrollElements);
+                ticking = true;
+            }
+        });
     </script>
 </body>
 </html>
